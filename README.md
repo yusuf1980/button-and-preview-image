@@ -107,7 +107,8 @@ There is onchange event to customization
 	let imgid = document.getElementById('myImage');
 
 	new InputFilePreview(inputimage, {
-	  showPreview: false,
+	  showPreview: false, 
+	  acceptType: ['image/gif', 'image/png'],
 	  onChange: function(e, img) {
 	  	var image = document.getElementById('newpreview');
         image.src = img

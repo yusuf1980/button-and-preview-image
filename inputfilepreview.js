@@ -190,7 +190,9 @@ InputFilePreview.prototype = {
         self._inputStyle();
         self._createLabel();
         self._createParagraph();
-        self._createPreview();
+        if(self._options.showPreview) {
+            self._createPreview();
+        };
     },
     _createWrapperInput: function() {
         var div = document.createElement('div');
@@ -257,7 +259,8 @@ InputFilePreview.prototype = {
         this.elinput.parentElement.appendChild(para);
         var styles = {
             'font-size': '0.85rem',
-            'color': '#555'
+            'color': '#555',
+            'margin': '10px 15px 10px 0'
         }
         addStyles(para, styles);
     },
@@ -270,6 +273,7 @@ InputFilePreview.prototype = {
             preview = taginbpreview;
         }
         preview.style.marginBottom = '15px';
+        preview.style.marginTop = '15px;'
 
     },
     _previewStyle: function() {
